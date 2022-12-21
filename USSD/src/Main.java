@@ -20,9 +20,10 @@ public class Main {
             String password = input.nextLine();
             int options;
             String AccounNo = Transaction1.getAccount_No();
-            System.out.print("Welcome" + "\t" + Transaction1.getNameSurname());
+
             do
             {
+                System.out.print("\nWelcome" + "\t" + Transaction1.getNameSurname());
                 if(password.equalsIgnoreCase(pin) && Acc_No.equalsIgnoreCase(AccounNo))
                 {
                     System.out.print("\nYour balance is : "+ amount);
