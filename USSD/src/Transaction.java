@@ -6,13 +6,12 @@ public class Transaction extends Account implements IUSSD
     {
     }
 
-    public Transaction(String name_Surname,String account_No,String password,double balance, double DepositCash ,double send_money, double withdraw)
+    public Transaction(String name_Surname,String account_No,String password,double balance,double send_money, double withdraw)
     {
         super.name_Surname = name_Surname;
         super.account_No = account_No;
         super.password  = password;
         super.balance = balance;
-        super.DepositCash = DepositCash;
         this.send_money = send_money;
         this.withdraw = withdraw;
     }
