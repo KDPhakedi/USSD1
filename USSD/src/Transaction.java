@@ -1,53 +1,73 @@
 public class Transaction extends Account implements IUSSD
 {
-    private double send_money;
-    private double withdraw;
+    private String Account_No;
+
+    private double balance;
+
     public Transaction()
     {
     }
 
-    public Transaction(String name_Surname,String account_No,String password,double balance,double send_money, double withdraw)
+    public Transaction(String Account_No,String name,double balance, String password)
     {
-        super.name_Surname = name_Surname;
-        super.account_No = account_No;
-        super.password  = password;
-        super.balance = balance;
-        this.send_money = send_money;
-        this.withdraw = withdraw;
-    }
-    public double getbalance()
-    {
-        return balance;
-    }
-    public double getSendMoney()
-    {
-        return send_money;
-    }
-    public double getWihdraw()
-    {
-        return withdraw;
-    }
-    public String getPassword()
-    {
-        return password;
-    }
-    public String getNameSurname()
-    {
-        return name_Surname;
+        this.Account_No = Account_No;
+        super.name = name;
+        if(balance > 0.0)
+            this.balance = balance;
+        super.password = password;
     }
     public String getAccount_No()
     {
-        return account_No;
+        if(Account_No.length() == 10)
+        {
+            return Account_No;
+        }
+        else
+            return null;
     }
-    public double calc()
+    public String getPassword()
     {
-        double numb = balance - send_money;
-        return numb;
+        if(password.length() == 5)
+        {
+            return password;
+        }
+        else{
+            return null;
+        }
     }
-    public String toString()
+
+    public void deposit(double depositAmount)
     {
-        String str = String.format(super.toString(), send_money, withdraw);
-        return str;
+        if(depositAmount >0.0)
+            balance = balance + depositAmount;
+    }
+
+    public void withdraw(double withdrawMoney)
+    {
+        if(withdrawMoney >= 30) {
+            balance = balance - withdrawMoney;
+        }
+    }
+
+    public void SendMoney(double SendMoney)
+    {
+        if(SendMoney >= 30) {
+            balance = balance - SendMoney;
+        }
+
+    }
+    public double getBalance()
+    {
+        return balance;
+    }
+
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+
+    public String getName()
+    {
+        return name;
     }
 }
-

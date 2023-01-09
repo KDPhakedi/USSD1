@@ -1,4 +1,3 @@
-public interface IUSSD {
-    double calc();
-
+public interface IUSSD  {
+    public void SendMoney(double SendMoney);
 }
